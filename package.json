@@ -1,0 +1,9 @@
+{
+  "name": "discord-bot-of-hacktoberfest-2021",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node --inspect index.js"
+  },
+  "dependencies": {}
+}
