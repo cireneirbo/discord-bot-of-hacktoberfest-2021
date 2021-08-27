@@ -16,7 +16,7 @@ client.on('message', msg => {
 
   // show server id
   if (msg.content === commands[0]) {
-    msg.reply(`Commands: ${commands.join(', ')}`);
+    commands.printCommands();
   } 
 });
 
