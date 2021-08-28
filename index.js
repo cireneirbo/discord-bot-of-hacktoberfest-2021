@@ -1,6 +1,6 @@
 // the essentials - your packages
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const client = new Discord.Client({ intents: ["GUILD_MESSAGES"]});
 const config = require('./config.json'); // handles the login/access of the bot
 
 // required - confirms that the bot is online
@@ -9,14 +9,18 @@ client.on('ready', () => {
 });
 
 //array of all commands
-const commands = ['!commands'];
+const commands = ['!commands', '!helloworld'];
 
 // the action - all of your commands are run here
 client.on('message', msg => {
 
   // show server id
   if (msg.content === commands[0]) {
-    commands.printCommands();
+    commandsList.printCommands();
+  } 
+  // show server id
+  if (msg.content === commands[1]) {
+    msg.reply(`hello eric`);
   } 
 });
 

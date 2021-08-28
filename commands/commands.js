@@ -1,5 +1,3 @@
-
-
 let commandsList = function() {
     function printCommands() {
         msg.reply(`Commands: ${commands.join(', ')}`);
@@ -9,5 +7,4 @@ let commandsList = function() {
     return {
          printCommands: printCommands
     }
-}(); //← This is called a immediately invoked function definition,   
-     // or IIFE
+}(); // This is called an immediately invoked function definition, or IIFE

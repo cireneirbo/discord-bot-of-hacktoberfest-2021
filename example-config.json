@@ -1,3 +1,4 @@
 {
-    "token" : "project key"
+    "token" : "build-a-bot token",
+    "prefix" : "!"
 }
