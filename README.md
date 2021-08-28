@@ -17,3 +17,7 @@ Follow the CONTRIBUTING.md instructions to add content.
 * The above APPLICATION ID in the link is to be replaced by your `APPLICATION ID` (or possibly called CLIENT ID) found at https://discord.com/developers/applications/`your-application-ID`/information.
 * Start the bot from the command line by navigating to the project folder and using `node --inspect index.js`.
 * If the bot appears to be offline, it is because you need to have the bot running from the command line (`node --inspect index.js`) to use it.
+
+## Useful Troubleshooting Links
+* https://stackoverflow.com/questions/68694195/how-do-i-fix-client-missing-intents-error-disord-js
+* https://discordjs.guide/preparations/adding-your-bot-to-servers.html#bot-invite-links
