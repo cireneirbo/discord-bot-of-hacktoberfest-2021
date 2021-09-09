@@ -22,3 +22,4 @@ Follow the CONTRIBUTING.md instructions to add content.
 * https://stackoverflow.com/questions/68694195/how-do-i-fix-client-missing-intents-error-disord-js
 * https://discordjs.guide/preparations/adding-your-bot-to-servers.html#bot-invite-links
 * https://devcenter.heroku.com/articles/config-vars#managing-config-vars
+* https://smithspencer817.medium.com/understanding-modules-in-node-js-ecac051e0f4
