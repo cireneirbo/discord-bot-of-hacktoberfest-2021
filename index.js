@@ -1,8 +1,9 @@
 // the essentials - your packages
-const Discord = require('discord.js');
-const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
+const Discord = require('discord.js'); // api we are primarily using to run the bot
+const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] }); //initializes client permissions
 const config = require('./config.json'); // handles the login/access of the bot
-const {printCommands} = require('./commands/commands');
+const {printHello} = require('./commands/hello'); // this imports the file 'hello.js'. be sure to include all of the functions you created in your own file within the '{}' and separated by commas.
+const {printServerID} = require('./commands/server');
 
 // required - confirms that the bot is online
 client.on('ready', () => {
@@ -10,17 +11,17 @@ client.on('ready', () => {
 });
 
 // the action - all of your commands are run here
+// be sure to create your own 'if' statement below to run your commands
 client.on('messageCreate', msg => {
 
   // show server id
-  if (msg.content === "!commands") {
-    commandsList.printCommands();
+  if (msg.content === "!server id") {
+    msg.channel.send(printServerID());
+    console.log(printServerID());
   } 
-  // show server id
+  // say 'hello'
   if (msg.content === "!hello") {
-    //msg.reply(`hey ${msg.user}`);
-    msg.reply("hey");
-    console.log(printCommands());
+    msg.channel.send(printHello());
   } 
 });
 
