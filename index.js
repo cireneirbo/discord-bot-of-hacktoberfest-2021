@@ -16,8 +16,9 @@ client.on('messageCreate', msg => {
 
   // show server id
   if (msg.content === "!server id") {
-    msg.channel.send(printServerID());
-    console.log(printServerID());
+    let nameOfGuild = printServerID();
+    msg.channel.send(msg.guild.name);
+    msg.channel.send(msg.nameOfGuild);
   } 
   // say 'hello'
   if (msg.content === "!hello") {
