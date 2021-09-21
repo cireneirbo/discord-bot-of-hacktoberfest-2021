@@ -7,7 +7,9 @@ Follow the CONTRIBUTING.md instructions to add content.
 ## Dependents
 * `npm i discord.js` https://www.npmjs.com/package/discord.js
 
-## How To Run This Discord Bot
+## Join the Discord Server Where This Bot Is Hosted
+
+## How to Set Up Your Discord Bot On Your Personal Server (for testing or more permanently)
 * Clone or fork this repo. Open in your IDE of choice and install dependents with `npm install` in the command line/terminal.
 * Log in to Discord in your browser and create a new Application here: https://discord.com/developers/applications
 * Navigate to the `Bot` tab and create a new bot. Note the `token` ID that is listed here.
