@@ -13,8 +13,7 @@ The goal of this project is to make adding code to a discord bot as easy or as h
 * With your command file ready, it is time to import it and call it in `index.js`.
 * In Section B of `index.js`, put your exported functions in the `{}` and reference your file in the commands folder with `./commands/yourfile`. 
 * The import should follow this format: `const {functionToSendToIndexDotJS} = require('./commands/example');`
-* If you are importing multiple functions, separate them with a comma: \\n
-`const {functionToSendToIndexDotJS, anotherFunction, andYetAnother} = require('./commands/example');`
+* If you are importing multiple functions, separate them with a comma: `const {functionToSendToIndexDotJS, anotherFunction, andYetAnother} = require('./commands/example');`
 * In Section D of `index.js`, you will call your imported function similar to the other examples. You will need to make your own if statement. Label it with a comment '//' so everyone can easy see what it does.
 ```
 if (msg.content === "!hello") {
