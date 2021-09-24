@@ -2,6 +2,7 @@
 const Discord = require('discord.js'); // api we are primarily using to run the bot
 const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] }); //initializes client permissions
 const config = require('./config.json'); // handles the login/access of the bot
+require('dotenv').config(); // processes .env key/values
 
 // Section B - imported files/commands
 // to import your own file after creating one like 'example.js', at the bottom of this import block 
@@ -35,4 +36,7 @@ client.on('messageCreate', msg => {
   } 
 });
 
-client.login(config.token); // verifies that the bot is logged in with access
+// verifies that the bot is logged in with access
+client.login(process.env.token); // .env files allow you to host your bot on heroku.com
+// to use the config.json instead use:
+// client.login(config.token);

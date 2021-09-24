@@ -6,6 +6,7 @@ Follow the CONTRIBUTING.md instructions to add content.
 
 ## Dependents
 * `npm i discord.js` https://www.npmjs.com/package/discord.js
+* `npm i dotenv` https://www.npmjs.com/package/dotenv
 
 ## Join the Discord Server Where This Bot Is Hosted
 Feel free to join my server set up for this project and the 2021 Hacktoberfest: https://discord.gg/AxXBdptd
@@ -26,3 +27,4 @@ Feel free to join my server set up for this project and the 2021 Hacktoberfest: 
 * https://discordjs.guide/preparations/adding-your-bot-to-servers.html#bot-invite-links
 * https://devcenter.heroku.com/articles/config-vars#managing-config-vars
 * https://smithspencer817.medium.com/understanding-modules-in-node-js-ecac051e0f4
+* https://devcenter.heroku.com/articles/config-vars#accessing-config-var-values-from-code
