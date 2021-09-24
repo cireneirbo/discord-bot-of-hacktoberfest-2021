@@ -106,3 +106,6 @@ dist
 # config
 config.json
 .vscode/settings.json
+
+# env
+.env
