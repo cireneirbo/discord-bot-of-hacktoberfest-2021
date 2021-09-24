@@ -25,6 +25,7 @@ if (msg.content === "!hello") {
 * `msg.channel.send()` handles sending your function/data to the Discord channel in response to the user request. You will replace the `printHello()` in its parenthesis to whatever you need to send the function you've made.
 
 ## How to Make a Push Request Back to the Original Project
+* https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests
 
 
 
