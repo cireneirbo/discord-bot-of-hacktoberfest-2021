@@ -16,12 +16,12 @@ The goal of this project is to make adding code to a discord bot as easy or as h
 * If you are importing multiple functions, separate them with a comma: `const {functionToSendToIndexDotJS, anotherFunction, andYetAnother} = require('./commands/example');`
 * In Section D of `index.js`, you will call your imported function similar to the other examples. You will need to make your own if statement. Label it with a comment '//' so everyone can easy see what it does.
 ```
-if (msg.content === "!hello") {
+if (msg.content === `${prefix}hello`) {
     msg.channel.send(printHello());
   } 
 ```
-* In the `!hello` string, you will change the value to be whatever you want your command to be when written into the Discord server. This is what the bot listens for.
-* Please use an `!` at the start of it, as this helps to prevent unintended bot requests when users are conversing normally.
+* In the `${prefix}hello` string, you will change the value to be whatever you want your command to be when written into the Discord server. This is what the bot listens for. The ${prefix} is for the bot to check whether a message has the prefix for a command or not, so all of your if statements should start with a ${prefix}.
+* Please use an `${prefix}` at the start of it, as this helps to prevent unintended bot requests when users are conversing normally.
 * `msg.channel.send()` handles sending your function/data to the Discord channel in response to the user request. You will replace the `printHello()` in its parenthesis to whatever you need to send the function you've made.
 
 ## How to Make a Push Request Back to the Original Project
