@@ -9,6 +9,7 @@ require('dotenv').config(); // processes .env key/values
 // put your exported functions in the '{}' and reference your file in the commands folder with './commands/yourfile'
 const {printHello} = require('./commands/hello'); // this imports the file 'hello.js'. be sure to include all of the functions you created in your own file within the '{}' and separated by commas.
 const {printServerID} = require('./commands/server');
+const {greetings} = require('./commands/greet');
 // const {functionToSendToIndexDotJS} = require('./commands/example');
 const token = process.env.token ?? config.token ?? "No Token was specified." //Gives clear warning to user if no token was specified.
 const prefix = process.env.prefix ?? config.prefix ?? "!" //default to ! if no prefix is found
@@ -23,17 +24,21 @@ client.on('ready', () => {
 // be sure to create your own 'if' statement below to run your commands
 client.on('messageCreate', msg => {
 
-  // show server id
-  if (msg.content === `${prefix}server id`) {
-    let nameOfGuild = printServerID() + ".name";
-    msg.channel.send(msg.guild.name);
-    //msg.channel.send(msg.nameOfGuild);
-    //console.log(nameOfGuild);
-  } 
+  // show server info
+  if (msg.content === `${prefix}server info`) {
+    msg.channel.send(`${msg.guild.name} - ${msg.guild.id}`);
+  }
+
   // say 'hello'
   if (msg.content === `${prefix}hello`) {
     msg.channel.send(printHello());
   } 
+
+  //greet message
+  if(msg.content === `${prefix}greet`) {
+    msg.channel.send(greetings());
+  }
+
 });
 
 // verifies that the bot is logged in with access
