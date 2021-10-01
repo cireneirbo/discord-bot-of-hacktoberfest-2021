@@ -10,7 +10,7 @@ require('dotenv').config(); // processes .env key/values
 const {printHello} = require('./commands/hello'); // this imports the file 'hello.js'. be sure to include all of the functions you created in your own file within the '{}' and separated by commas.
 const {printServerID} = require('./commands/server');
 // const {functionToSendToIndexDotJS} = require('./commands/example');
-const token = process.env.token ?? config.token ?? "No Token was specified." //default to ! if no token is found
+const token = process.env.token ?? config.token ?? "No Token was specified." //Gives clear warning to user if no token was specified.
 const prefix = process.env.prefix ?? config.prefix ?? "!" //default to ! if no prefix is found
 // ^^^^ keep file imports above this comment 
 
@@ -37,6 +37,4 @@ client.on('messageCreate', msg => {
 });
 
 // verifies that the bot is logged in with access
-client.login(token); // .env files allow you to host your bot on heroku.com
-// to use the config.json instead use:
-// client.login(config.token);
+client.login(token); 
