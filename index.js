@@ -24,17 +24,9 @@ client.on('ready', () => {
 // be sure to create your own 'if' statement below to run your commands
 client.on('messageCreate', msg => {
 
-  // show server id
-  if (msg.content === `${prefix}server id`) {
-    // let nameOfGuild = printServerID() + ".name";
-    msg.channel.send(msg.guild.id);
-    //msg.channel.send(msg.nameOfGuild);
-    //console.log(nameOfGuild);
-  }
-
-  // show server name
-  if (msg.content === `${prefix}server name`) {
-    msg.channel.send(msg.guild.name);
+  // show server info
+  if (msg.content === `${prefix}server info`) {
+    msg.channel.send(`${msg.guild.name} - ${msg.guild.id}`);
   }
 
   // say 'hello'
