@@ -1,7 +1,7 @@
 // Section A - the essentials - your most necessary packages
 const Discord = require('discord.js'); // api we are primarily using to run the bot
 const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] }); //initializes client permissions
-const config = require('./config.json'); // handles the login/access of the bot
+//const config = require('./config.json'); // handles the login/access of the bot
 require('dotenv').config(); // processes .env key/values
 
 // Section B - imported files/commands
