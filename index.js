@@ -10,6 +10,7 @@ require('dotenv').config(); // processes .env key/values
 const {printHello} = require('./commands/hello'); // this imports the file 'hello.js'. be sure to include all of the functions you created in your own file within the '{}' and separated by commas.
 const {printServerID} = require('./commands/server');
 const {greetings} = require('./commands/greet');
+const {ping} = require('./commands/ping');
 // const {functionToSendToIndexDotJS} = require('./commands/example');
 const token = process.env.token ?? config.token ?? "No Token was specified." //Gives clear warning to user if no token was specified.
 const prefix = process.env.prefix ?? config.prefix ?? "!" //default to ! if no prefix is found
@@ -39,7 +40,14 @@ client.on('messageCreate', msg => {
     msg.channel.send(greetings());
   }
 
+  if(msg.content === `${prefix}ping`) {
+    msg.channel.send(ping(client))
+  }
 });
+
+client.on('guildMemberAdd', (member) => {
+  member.send('Welcome to the server!');
+})
 
 // verifies that the bot is logged in with access
 client.login(token); 
