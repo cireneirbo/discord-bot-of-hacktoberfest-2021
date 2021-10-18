@@ -10,6 +10,8 @@ require('dotenv').config(); // processes .env key/values
 const {printHello} = require('./commands/hello'); // this imports the file 'hello.js'. be sure to include all of the functions you created in your own file within the '{}' and separated by commas.
 const {getServerInfo} = require("./commands/serverinfo");
 const {printServerID} = require('./commands/server');
+const {greetings} = require('./commands/greet');
+const {ping} = require('./commands/ping');
 // const {functionToSendToIndexDotJS} = require('./commands/example');
 const token = process.env.token ?? config.token ?? "No Token was specified." //Gives clear warning to user if no token was specified.
 const prefix = process.env.prefix ?? config.prefix ?? "!" //default to ! if no prefix is found
@@ -22,28 +24,35 @@ client.on('ready', () => {
 
 // Section D - all of your commands are run here
 // be sure to create your own 'if' statement below to run your commands
-client.on("messageCreate", (msg) => {
-  // show server id
-  if (msg.content === `${prefix}server id`) {
-    let nameOfGuild = printServerID() + ".name";
-    msg.channel.send(msg.guild.name);
-    //msg.channel.send(msg.nameOfGuild);
-    //console.log(nameOfGuild);
+client.on('messageCreate', msg => {
+
+  // show server info
+  if (msg.content === `${prefix}server info`) {
+    msg.channel.send(`${msg.guild.name} - ${msg.guild.id}`);
   }
+
   // say 'hello'
   if (msg.content === `${prefix}hello`) {
     msg.channel.send(printHello());
+  } 
+
+  //greet message
+  if(msg.content === `${prefix}greet`) {
+    msg.channel.send(greetings());
   }
+
+  if(msg.content === `${prefix}ping`) {
+    msg.channel.send(ping(client))
+  }
+
   if (msg.content === `${prefix}serverinfo`) {
-    msg.channel.send({ embeds: [getServerInfo(msg.guild)] });
-//     msg.channel.send({ embeds: [new Discord.MessageEmbed()
-//             .setDescription("Hello")
-//             .setTitle("hello")
-// 
-// 
-//     ] });
+    msg.channel.send({ embeds: [getServerInfo(msg.guild)] })
   }
 });
+
+client.on('guildMemberAdd', (member) => {
+  member.send('Welcome to the server!');
+})
 
 // verifies that the bot is logged in with access
 client.login(token); 

@@ -9,7 +9,7 @@ Follow the CONTRIBUTING.md instructions to add content.
 * `npm i dotenv` https://www.npmjs.com/package/dotenv
 
 ## Join the Discord Server Where This Bot Is Hosted
-Feel free to join my server set up for this project and the 2021 Hacktoberfest: https://discord.gg/AxXBdptd
+Feel free to join my server set up for this project and the 2021 Hacktoberfest: https://discord.gg/T77xm3ayFP
 
 ## How to Set Up Your Discord Bot On Your Personal Server (for testing or more permanently)
 * Clone or fork this repo. Open in your IDE of choice and install dependents with `npm install` in the command line/terminal.
