@@ -8,6 +8,7 @@ require('dotenv').config(); // processes .env key/values
 // to import your own file after creating one like 'example.js', at the bottom of this import block 
 // put your exported functions in the '{}' and reference your file in the commands folder with './commands/yourfile'
 const {printHello} = require('./commands/hello'); // this imports the file 'hello.js'. be sure to include all of the functions you created in your own file within the '{}' and separated by commas.
+const {getServerInfo} = require("./commands/serverinfo");
 const {printServerID} = require('./commands/server');
 const {greetings} = require('./commands/greet');
 const {ping} = require('./commands/ping');
@@ -42,6 +43,10 @@ client.on('messageCreate', msg => {
 
   if(msg.content === `${prefix}ping`) {
     msg.channel.send(ping(client))
+  }
+
+  if (msg.content === `${prefix}serverinfo`) {
+    msg.channel.send({ embeds: [getServerInfo(msg.guild)] })
   }
 });
 
