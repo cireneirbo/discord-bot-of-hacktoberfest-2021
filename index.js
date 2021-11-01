@@ -13,6 +13,7 @@ const {printServerID} = require('./commands/server');
 const {greetings} = require('./commands/greet');
 const {ping} = require('./commands/ping');
 // const {functionToSendToIndexDotJS} = require('./commands/example');
+const {printAscii} = require('./commands/asciiart');
 const token = process.env.token ?? config.token ?? "No Token was specified." //Gives clear warning to user if no token was specified.
 const prefix = process.env.prefix ?? config.prefix ?? "!" //default to ! if no prefix is found
 // ^^^^ keep file imports above this comment 
@@ -34,6 +35,11 @@ client.on('messageCreate', msg => {
   // say 'hello'
   if (msg.content === `${prefix}hello`) {
     msg.channel.send(printHello());
+  } 
+
+  // print ascii art
+  if (msg.content === `${prefix}asciiart`) {
+      msg.channel.send(printAscii());
   } 
 
   //greet message
