@@ -17,6 +17,7 @@ const {printAscii} = require('./commands/asciiart');
 const {takeABreak} = require('./commands/takeabreak');
 const {narutoQuote} = require('./commands/narutoquotes');
 const {kirby} = require('./commands/kirby');
+const {bestMovie} = require('./commands/bestmovie');
 const token = process.env.token ?? config.token ?? "No Token was specified." //Gives clear warning to user if no token was specified.
 const prefix = process.env.prefix ?? config.prefix ?? "!" //default to ! if no prefix is found
 // ^^^^ keep file imports above this comment 
@@ -63,6 +64,11 @@ client.on('messageCreate', msg => {
   //kirby
   if(msg.content === `${prefix}kirby`) {
     msg.channel.send(kirby());
+  }
+
+  //best movie
+  if(msg.content === `${prefix}bestmovie`) {
+    msg.channel.send(bestmovie());
   }
 
   if(msg.content === `${prefix}ping`) {
