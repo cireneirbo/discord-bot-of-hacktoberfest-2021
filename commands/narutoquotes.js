@@ -58,7 +58,7 @@ function narutoQuotes() {
   
   let quote = getRandomInt(quotes.length);
  
-  return quote;
+  return quotes[quote];
 }
 
 module.exports.narutoQuotes = narutoQuotes;
